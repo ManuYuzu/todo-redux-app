@@ -1,0 +1,12 @@
+<footer class="footer">
+  <span class="todo-count"><strong>{{ pendings }}</strong> item left</span>
+  <ul class="filters">
+    @for (filter of filters; track $index) {
+    <li (click)="changeFilter(filter)">
+      <a [class.selected]="filter === currentFilter">{{ filter | titlecase }}</a>
+    </li>
+    }
+  </ul>
+  <!-- Hidden if no completed items are left ↓ -->
+  <button class="clear-completed" (click)="removeAllCompleted()">Clear completed</button>
+</footer>

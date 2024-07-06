@@ -1,0 +1,5 @@
+<ul class="todo-list">
+  @for (todo of todos | todoFilter: currentFilter; track $index) {
+  <app-todo-item [todo]="todo"></app-todo-item>
+  }
+</ul>
